@@ -2,7 +2,7 @@
 Baseline for [1st Anti-UAV Challenge](https://anti-uav.github.io)
 
 ## Download Dataset `test-dev`
-- Google Drive
+- [Google Drive](https://drive.google.com/file/d/11aB7cvyfIaWWDDUYuy2nvvwsRJaEFTfC/view?usp=sharing)
 - [Baidu Yun](https://pan.baidu.com/s/14iYLSR3sfZeAbRwDyqCs-g)(p29w)
 
 ## Test
