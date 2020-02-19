@@ -62,7 +62,8 @@ def eval(out_res, label_res):
     return np.mean(measure_per_frame)
 
 
-def main(visulization=False):
+def main(mode='IR', visulization=False):
+    assert mode in ['IR', 'RGB'], 'Only Support IR or RGB to evalute'
     # setup tracker
     net_path = 'model.pth'
     tracker = TrackerSiamFC(net_path=net_path)
@@ -78,8 +79,8 @@ def main(visulization=False):
     # run tracking experiments and report performance
     for video_id, video_path in enumerate(video_paths, start=1):
         video_name = os.path.basename(video_path)
-        video_file = os.path.join(video_path, 'RGB.mp4')
-        res_file = os.path.join(video_path, 'label.json')
+        video_file = os.path.join(video_path, '%s.mp4'%mode)
+        res_file = os.path.join(video_path, '%s_label.json'%mode)
         with open(res_file, 'r') as f:
             label_res = json.load(f)
 
@@ -107,7 +108,7 @@ def main(visulization=False):
                     cv2.rectangle(frame, (int(_gt[0]), int(_gt[1])), (int(_gt[0] + _gt[2]), int(_gt[1] + _gt[3])),
                                   (0, 255, 0))
                 cv2.putText(frame, 'exist' if _exist else 'not exist',
-                            (frame.shape[1] // 2, 50), 1, 3, (0, 255, 0) if _exist else (0, 0, 255), 2)
+                            (frame.shape[1] // 2 - 20, 30), 1, 2, (0, 255, 0) if _exist else (0, 0, 255), 2)
 
                 cv2.rectangle(frame, (int(out[0]), int(out[1])), (int(out[0] + out[2]), int(out[1] + out[3])),
                               (0, 255, 255))
@@ -117,16 +118,16 @@ def main(visulization=False):
         if visulization:
             cv2.destroyAllWindows()
         # save result
-        output_file = os.path.join(output_dir, '%s.txt' % video_name)
+        output_file = os.path.join(output_dir, '%s_%s.txt' % (video_name, mode))
         with open(output_file, 'w') as f:
             json.dump({'res': out_res}, f)
 
         mixed_measure = eval(out_res, label_res)
         overall_performance.append(mixed_measure)
-        print('[%03d/%03d] %15s Fixed Measure: %.03f' % (video_id, video_num, video_name, mixed_measure))
+        print('[%03d/%03d] %20s %5s Fixed Measure: %.03f' % (video_id, video_num, video_name, mode, mixed_measure))
 
-    print('[Overall] Mixed Measure: %.03f\n' % (np.mean(overall_performance)))
+    print('[Overall] %5s Mixed Measure: %.03f\n' % (mode, np.mean(overall_performance)))
 
 
 if __name__ == '__main__':
-    main(visulization=True)
+    main(mode='IR', visulization=False)
