@@ -35,3 +35,13 @@ python test.py
 [100/100]  20190925_213001_1_2    IR Fixed Measure: 0.028
 [Overall]    IR Mixed Measure: 0.420
 ```
+
+# Submit result to [codalab](https://competitions.codalab.org/competitions/23881)
+
+```
+cd result/SiamFC
+zip -r ../SiamFC_test_dev.zip *.txt
+```
+
+You can upload the `SiamFC_test_dev.zip` file to codalab(https://competitions.codalab.org/competitions/23881).
+
