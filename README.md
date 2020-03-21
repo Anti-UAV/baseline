@@ -43,5 +43,5 @@ cd result/SiamFC
 zip -r ../SiamFC_test_dev.zip *.txt
 ```
 
-You can upload the `SiamFC_test_dev.zip` file to codalab(https://competitions.codalab.org/competitions/23881).
+You can upload the `SiamFC_test_dev.zip` file to codalab(https://competitions.codalab.org/competitions/23887).
 
