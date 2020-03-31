@@ -200,7 +200,7 @@ class TrackerSiamFC(object):
             self.center[0] + 1 - (self.target_sz[0] - 1) / 2,
             self.target_sz[1], self.target_sz[0]])
 
-        return box
+        return box if response.max() > 1e-5 else np.array([0])
 
     def _crop_and_resize(self, image, center, size, out_size, pad_color):
         # convert box to corners (0-indexed)

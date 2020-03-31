@@ -52,13 +52,13 @@ def iou(bbox1, bbox2):
 
 
 def not_exist(pred):
-    return len(pred) == 1 and pred == 0
+    return (len(pred) == 1 and pred[0] == 0) or len(pred) == 0
 
 
 def eval(out_res, label_res):
     measure_per_frame = []
     for _pred, _gt, _exist in zip(out_res, label_res['gt_rect'], label_res['exist']):
-        measure_per_frame.append(not_exist(_pred) if not _exist else iou(_pred, _gt))
+        measure_per_frame.append(not_exist(_pred) if not _exist else iou(_pred, _gt) if len(_pred) > 1 else 0)
     return np.mean(measure_per_frame)
 
 
