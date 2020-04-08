@@ -69,7 +69,7 @@ def main(mode='IR', visulization=False):
     tracker = TrackerSiamFC(net_path=net_path)
 
     # setup experiments
-    video_paths = glob.glob(os.path.join('dataset', 'test-dev', '*'))
+    video_paths = glob.glob(os.path.join('dataset', 'test-challenge', '*'))
     video_num = len(video_paths)
     output_dir = os.path.join('results', tracker.name)
     if not os.path.exists(output_dir):
