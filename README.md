@@ -43,7 +43,7 @@ python test.py
 # Submit result to [codalab](https://competitions.codalab.org/competitions/23881)
 
 ```
-cd result/SiamFC
+cd results/SiamFC
 zip -r ../SiamFC_test_challenge.zip *.txt
 ```
 
