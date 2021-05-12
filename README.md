@@ -1,5 +1,5 @@
 # Baseline
-Baseline for [1st Anti-UAV Challenge](https://anti-uav.github.io).
+Baseline for [2nd Anti-UAV Challenge](https://anti-uav.github.io).
 
 <div align="center">
   <img src="anti-uav.gif" width="600px" />
@@ -7,16 +7,14 @@ Baseline for [1st Anti-UAV Challenge](https://anti-uav.github.io).
 
 ## Download Dataset
 
-- `test-challenge`: [Google Drive](https://drive.google.com/file/d/167ibsP99Gd28wLUywyyBg4SzoV4MTIp2/view?usp=sharing) and [Baidu Yun](https://pan.baidu.com/s/1tKhdFKiaPZ4pAvMrhEtNdA)(y67q)
+- `test-dev`:  [Google Drive](https://drive.google.com/file/d/1UCyapTkvYGJsfn21iUFInHANbDIAkSeX/view?usp=sharing) and [Baidu Yun](https://pan.baidu.com/s/11OnXAzT28WWFqaKPPy00DA)(vfjb)
 
-- `test-dev`:  [Google Drive](https://drive.google.com/open?id=1GICr5e9CZN0tcFM_VXhyogzxWD3LMvAw) and [Baidu Yun](https://pan.baidu.com/s/1dJR0VKyLyiXBNB_qfa2ZrA)(sagx)
+- `test-challenge`: The test-challenge will be released on 3rd July.
 
 **Note**: 
 
-- We provide IR, RGB videos and their ground-truth labels. Contestants can only use both IR and RGB videos and **their location in the first frame**.
-Our evaluation ranks are calculated according to the results on the IR video.
-- Update: (2020/02/19) upload IR_label.json 
-- Update: (2020/04/08) upload test-challenge
+- We provide Thermal Infrared (IR) videos and their ground-truth labels. Contestants can only use the ground- truth bounding box of the target in the first frame. For a comprehensive comparison of different trackers, we evaluate them on video sequences with various challenging attributes. Our evaluation ranks are calculated according to the overall performance on all video sequences.
+
 
 
 ## Test
