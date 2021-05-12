@@ -9,7 +9,7 @@ Baseline for [2nd Anti-UAV Challenge](https://anti-uav.github.io).
 
 - `test-dev`:  [Google Drive](https://drive.google.com/file/d/1UCyapTkvYGJsfn21iUFInHANbDIAkSeX/view?usp=sharing) and [Baidu Yun](https://pan.baidu.com/s/11OnXAzT28WWFqaKPPy00DA)(vfjb)
 
-- `test-challenge`: The test-challenge will be released on 3rd July.
+- `test-challenge`: The test-challenge will be released on 3rd July, 2021.
 
 **Note**: 
 
